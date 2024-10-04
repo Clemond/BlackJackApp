@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct BlackJackModel {
+    
+    var card: Int = 0
+    
+}

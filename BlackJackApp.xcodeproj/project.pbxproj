@@ -6,8 +6,17 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		8389B85D2CB015FB006059E4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389B85C2CB015FB006059E4 /* ContentView.swift */; };
+		8389B86C2CB024FF006059E4 /* BlackJackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389B86B2CB024FF006059E4 /* BlackJackModel.swift */; };
+		8389B86E2CB02641006059E4 /* BlackJackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389B86D2CB02641006059E4 /* BlackJackViewModel.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		8389B8572CB015FB006059E4 /* BlackJackApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlackJackApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8389B85C2CB015FB006059E4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8389B86B2CB024FF006059E4 /* BlackJackModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackJackModel.swift; sourceTree = "<group>"; };
+		8389B86D2CB02641006059E4 /* BlackJackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackJackViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -32,6 +41,9 @@
 		8389B84E2CB015FB006059E4 = {
 			isa = PBXGroup;
 			children = (
+				8389B8692CB02363006059E4 /* Model */,
+				8389B8682CB0235E006059E4 /* View */,
+				8389B86A2CB0236B006059E4 /* ViewModel */,
 				8389B8592CB015FB006059E4 /* BlackJackApp */,
 				8389B8582CB015FB006059E4 /* Products */,
 			);
@@ -43,6 +55,30 @@
 				8389B8572CB015FB006059E4 /* BlackJackApp.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		8389B8682CB0235E006059E4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8389B85C2CB015FB006059E4 /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8389B8692CB02363006059E4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8389B86B2CB024FF006059E4 /* BlackJackModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8389B86A2CB0236B006059E4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8389B86D2CB02641006059E4 /* BlackJackViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,6 +155,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8389B85D2CB015FB006059E4 /* ContentView.swift in Sources */,
+				8389B86E2CB02641006059E4 /* BlackJackViewModel.swift in Sources */,
+				8389B86C2CB024FF006059E4 /* BlackJackModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
