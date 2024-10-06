@@ -7,22 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8389B85D2CB015FB006059E4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389B85C2CB015FB006059E4 /* ContentView.swift */; };
 		8389B86C2CB024FF006059E4 /* BlackJackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389B86B2CB024FF006059E4 /* BlackJackModel.swift */; };
 		8389B86E2CB02641006059E4 /* BlackJackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389B86D2CB02641006059E4 /* BlackJackViewModel.swift */; };
 		8389B8732CB0468C006059E4 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389B8722CB0468C006059E4 /* Player.swift */; };
 		8389B8832CB292F8006059E4 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389B8822CB292F8006059E4 /* MainMenuView.swift */; };
 		8389B8872CB2B9F7006059E4 /* VisualEffectBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389B8862CB2B9F7006059E4 /* VisualEffectBlur.swift */; };
+		8389B8892CB2C457006059E4 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389B8882CB2C457006059E4 /* GameView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8389B8572CB015FB006059E4 /* BlackJackApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlackJackApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		8389B85C2CB015FB006059E4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8389B86B2CB024FF006059E4 /* BlackJackModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackJackModel.swift; sourceTree = "<group>"; };
 		8389B86D2CB02641006059E4 /* BlackJackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackJackViewModel.swift; sourceTree = "<group>"; };
 		8389B8722CB0468C006059E4 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		8389B8822CB292F8006059E4 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
 		8389B8862CB2B9F7006059E4 /* VisualEffectBlur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectBlur.swift; sourceTree = "<group>"; };
+		8389B8882CB2C457006059E4 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -67,8 +67,8 @@
 		8389B8682CB0235E006059E4 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8389B85C2CB015FB006059E4 /* ContentView.swift */,
 				8389B8822CB292F8006059E4 /* MainMenuView.swift */,
+				8389B8882CB2C457006059E4 /* GameView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -174,9 +174,9 @@
 			files = (
 				8389B8872CB2B9F7006059E4 /* VisualEffectBlur.swift in Sources */,
 				8389B8832CB292F8006059E4 /* MainMenuView.swift in Sources */,
-				8389B85D2CB015FB006059E4 /* ContentView.swift in Sources */,
 				8389B86E2CB02641006059E4 /* BlackJackViewModel.swift in Sources */,
 				8389B8732CB0468C006059E4 /* Player.swift in Sources */,
+				8389B8892CB2C457006059E4 /* GameView.swift in Sources */,
 				8389B86C2CB024FF006059E4 /* BlackJackModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

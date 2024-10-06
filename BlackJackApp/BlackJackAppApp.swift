@@ -11,7 +11,7 @@ import SwiftUI
 struct BlackJackAppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView(currentCard: "")
+            MainMenuView()
         }
     }
 }

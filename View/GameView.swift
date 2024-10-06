@@ -1,29 +1,35 @@
 //
-//  ContentView.swift
+//  GameView.swift
 //  BlackJackApp
 //
-//  Created by Nicholas Nieminen Jönsson on 2024-10-04.
+//  Created by Nicholas Nieminen Jönsson on 2024-10-06.
 //
 
 import SwiftUI
 
-struct ContentView: View {
-    
+struct GameView: View {
     @StateObject var myBlackJackViewModel = BlackJackViewModel()
     
     @State var currentCard: String
+    
     var body: some View {
+        
         ZStack {
+            Image("background_blackjack")
+                .resizable()
+                .scaledToFill()
+                .ignoresSafeArea()
             
-            
+            VisualEffectBlur(style: .dark)
+                .opacity(0.5)
+                .ignoresSafeArea()
             
             VStack {
                 Text("Blackjack Game").bold().font(.title)
                 Spacer()
 
                 if(myBlackJackViewModel.blackJackGame.card == "0") {
-                    Text("Start game by pressing button below").font(.title3)
-                        .padding(.vertical,40)
+                    Image("back_light")
                 } else {
                     Image("card_\(myBlackJackViewModel.blackJackGame.card)")
                 }
@@ -39,24 +45,19 @@ struct ContentView: View {
                         .overlay(content: {
                             RoundedRectangle(cornerRadius: 25.0).stroke(.white, lineWidth: 3)
                         })
+                        .background(VisualEffectBlur(style: .dark))
+                        .clipShape(.rect(cornerRadius: 25))
+
                     
                 }).padding(10)
                 
             }.padding(.bottom,40)
+
         }
-         // Ensure VStack takes the full size
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.green)
+       
     }
 }
-    
-
-
-
-
-
-
 
 #Preview {
-    ContentView(currentCard: "")
+    GameView(currentCard: "0")
 }
