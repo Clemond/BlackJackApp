@@ -9,6 +9,8 @@ import Foundation
 
 struct BlackJackModel {
     
-    var card: Int = 0
+    var card: String = "0"
+    var currentPlayerScore: Int = 0
+    var currentDealerScore: Int = 0
     
 }

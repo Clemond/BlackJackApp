@@ -8,16 +8,36 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @StateObject var myBlackJackViewModel = BlackJackViewModel()
+    
+    @State var currentCard: String
     var body: some View {
         ZStack {
-            HStack {
-                if(myGameViewModel.diceGame.diceOne == 0 && myGameViewModel.diceGame.diceTwo == 0){
+            VStack {
+                Text("Blackjack Game").bold().font(.title)
+                Spacer()
+
+                if(myBlackJackViewModel.blackJackGame.card == "0") {
                     Text("Start game by pressing button below").font(.title3)
                         .padding(.vertical,40)
-                }else {
-                    Image("dice-\(myGameViewModel.diceGame.diceOne)")
-                    Image("dice-\(myGameViewModel.diceGame.diceTwo)")
+                } else {
+                    Image("card_\(myBlackJackViewModel.blackJackGame.card)")
                 }
+                Spacer()
+                Button(action: {
+                    print("Pressed")
+                    myBlackJackViewModel.drawCard()
+                }, label: {
+                    Text("Draw Card")
+                        .font(.title2)
+                        .foregroundStyle(Color.white)
+                        .padding(40)
+                        .overlay(content: {
+                            RoundedRectangle(cornerRadius: 25.0).stroke(.white, lineWidth: 3)
+                        })
+                    
+                }).padding(10)
                 
             }.padding(.bottom,40)
         }
@@ -26,6 +46,7 @@ struct ContentView: View {
         .background(Color.green)
     }
 }
+    
 
 
 
@@ -34,5 +55,5 @@ struct ContentView: View {
 
 
 #Preview {
-    ContentView()
+    ContentView(currentCard: "")
 }
