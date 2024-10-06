@@ -14,6 +14,9 @@ struct ContentView: View {
     @State var currentCard: String
     var body: some View {
         ZStack {
+            
+            
+            
             VStack {
                 Text("Blackjack Game").bold().font(.title)
                 Spacer()
@@ -26,8 +29,8 @@ struct ContentView: View {
                 }
                 Spacer()
                 Button(action: {
-                    print("Pressed")
                     myBlackJackViewModel.drawCard()
+                    print("Card drawn: \(myBlackJackViewModel.blackJackGame.card)")
                 }, label: {
                     Text("Draw Card")
                         .font(.title2)
