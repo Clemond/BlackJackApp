@@ -26,4 +26,28 @@ class BlackJackViewModel: ObservableObject {
         }
     }
     
+    func dealersFirstRandomCard() {
+        let allCardValues = arrayOfNumberCards + arrayOfFaceCards
+
+        if let randomCard = allCardValues.randomElement() {
+            blackJackGame.dealersFirstCard = randomCard
+        } else {
+            print("Could not draw card to dealer")
+        }
+        
+
+    }
+    
+    func getPlayerRandomCard() -> String {
+        let allCardValues = arrayOfNumberCards + arrayOfFaceCards
+        var randomPlayerCard = ""
+
+        if let randomCard = allCardValues.randomElement() {
+            randomPlayerCard = randomCard
+        } else {
+            print("Could not draw card to dealer")
+        }
+        return randomPlayerCard
+    }
+    
 }

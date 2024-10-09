@@ -12,7 +12,7 @@ struct GameView: View {
     
     @State var currentCard: String
     @State private var animateImage = false // Control the animation
-    @State private var isFlipped = false // State for flipping the card
+    
 
     
     let playerCardYPosition = UIScreen.main.bounds.height / 3 - 100
@@ -30,68 +30,101 @@ struct GameView: View {
             VisualEffectBlur(style: .dark)
                 .opacity(0.5)
                 .ignoresSafeArea()
-            
-            
-            
-                
            
-                VStack {
+            VStack(){
                     Text("Blackjack Game").bold().font(.title)
                     
-                    Spacer()
+                Text("Dealers hand")
+                    .bold()
+                    .frame(width: 150)
+                    .background(VisualEffectBlur(style: .light))
+                    .clipShape(.buttonBorder)
+                
+                Spacer()
 
                     if(myBlackJackViewModel.blackJackGame.card == "0") {
-                        HStack {
+                            
+                    HStack {
             
-                        Image("back_light")
+                        Image("card_\(myBlackJackViewModel.blackJackGame.dealersFirstCard)")
                             .resizable()
-                            .frame(width: 150, height: 200)
+                            .frame(width: 100, height: 135)
                         
                         Image("back_light")
                             .resizable()
-                            .frame(width: 150, height: 200)
+                            .frame(width: 100, height: 135)
                         
                         }
                         .offset(y: animateImage ? 0 : -UIScreen.main.bounds.height) // Animate from top to center
 
                          .animation(.easeInOut(duration: 1.5), value: animateImage) // Define the animation duration and curve
                         
+                        Spacer(minLength: 250 )
+                        
                         HStack {
             
                         Image("back_light")
                             .resizable()
-                            .frame(width: 150, height: 200)
+                            .frame(width: 100, height: 135)
                         
                         Image("back_light")
                             .resizable()
-                            .frame(width: 150, height: 200)
-                            .rotation3DEffect(
-                                .degrees(isFlipped ? 180 : 0),
-                                                        axis: (x: 0, y: 1, z: 0)
-                                                    )
-                                                    .animation(.easeInOut(duration: 0.6), value: isFlipped)
-                        
+                            .frame(width: 100, height: 135)
                         }
-                        
                            .offset(y: animateImage ? 0 : UIScreen.main.bounds.height) // Animate from top to center
 
                             .animation(.easeInOut(duration: 1.5), value: animateImage) // Define the animation duration and curve
                         
                         
                     } else {
-                        Image("card_\(myBlackJackViewModel.blackJackGame.card)")
-                            .resizable()
-                            .frame(width: 150, height: 200) // Adjust card size
+//                        Image("card_\(myBlackJackViewModel.blackJackGame.card)")
+//                            .resizable()
+//                            .frame(width: 100, height: 135)
+                        HStack {
+                
+                            Image("card_\(myBlackJackViewModel.blackJackGame.dealersFirstCard)")
+                                .resizable()
+                                .frame(width: 100, height: 135)
+                            
+                            Image("back_light")
+                                .resizable()
+                                .frame(width: 100, height: 135)
+                            
+                            }
+                            .offset(y: animateImage ? 0 : -UIScreen.main.bounds.height) // Animate from top to center
+
+                             .animation(.easeInOut(duration: 1.5), value: animateImage) // Define the animation duration and curve
+                            
+                            Spacer(minLength: 250 )
+                            
+                            HStack {
+                
+                                Image("card_\(myBlackJackViewModel.getPlayerRandomCard())")
+                                .resizable()
+                                .frame(width: 100, height: 135)
+                            
+                            Image("card_\(myBlackJackViewModel.getPlayerRandomCard())")
+                                .resizable()
+                                .frame(width: 100, height: 135)
+                            }
+                               .offset(y: animateImage ? 0 : UIScreen.main.bounds.height) // Animate from top to center
+
+                                .animation(.easeInOut(duration: 1.5), value: animateImage) // Define the animation duration and curve
 
                     }
                     
                     Spacer()
+                Text("Your hand")
+                    .bold()
+                    .frame(width: 150)
+                    .background(VisualEffectBlur(style: .light))
+                    .clipShape(.buttonBorder)
                     
                     Button(action: {
                         myBlackJackViewModel.drawCard()
                         print("Card drawn: \(myBlackJackViewModel.blackJackGame.card)")
                     }, label: {
-                        Text("Draw Card")
+                        Text("Show your cards")
                             .font(.title2)
                             .foregroundStyle(Color.white)
                             .padding(40)
@@ -107,13 +140,15 @@ struct GameView: View {
                     
                 }
                 .padding(.bottom,40)
-                .background(Color.gray.opacity(0.5)) //backgroundcolor for debugging
+                //.background(Color.gray.opacity(0.5)) //backgroundcolor for debugging
                
                 
 
         }
+        .frame(maxWidth: .infinity, alignment: .center)
         .onAppear {
                     // Trigger animation when the view appears
+                    myBlackJackViewModel.dealersFirstRandomCard()
                     animateImage = true
                 }
        
